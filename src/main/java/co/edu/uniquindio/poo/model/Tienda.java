@@ -65,4 +65,15 @@ public class Tienda {
         }
         return mensaje+=Optional.empty();
     }
+    public List <String> cantidadMenorACiencuentaYMayorADiez( Map <String, Producto> listaProductos, int cantidadDisponible,int codigo){
+
+        ArrayList <String> productosBuscados = new ArrayList<>();
+
+        for(Producto b: listaProductos.values()){
+            if(b.getCantidadDisponible() >= 10 && b.getCantidadDisponible() < 50){
+                productosBuscados.add(b.getCodigo());
+            }
+        }
+        return productosBuscados;
+    }
 }
