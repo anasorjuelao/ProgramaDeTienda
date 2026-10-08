@@ -56,13 +56,13 @@ public class Tienda {
         return Optional.empty();
     }
 
-    public Optional <Producto> cantidadDeUnProductoMayorADiez(ArrayList<Producto>listaProductos, int cantidadDisponible){
+    public String cantidadDeUnProductoMayorADiez(ArrayList<Producto>listaProductos, int cantidadDisponible){
         String mensaje="";
         for(Producto a: listaProductos){
             if(cantidadDisponible == (a.getCantidadDisponible())){
-                return Optional.of(a);
+                return mensaje+= Optional.of(a);
             }
         }
-        return Optional.empty();
+        return mensaje+=Optional.empty();
     }
 }
