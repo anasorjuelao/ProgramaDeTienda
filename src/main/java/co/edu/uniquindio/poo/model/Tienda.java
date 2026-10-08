@@ -65,7 +65,7 @@ public class Tienda {
         }
         return mensaje+=Optional.empty();
     }
-    public List <String> cantidadMenorACiencuentaYMayorADiez( Map <String, Producto> listaProductos, int cantidadDisponible,int codigo){
+    public ArrayList <String> cantidadMenorACiencuentaYMayorADiez( Map <String, Producto> listaProductos, int cantidadDisponible,int codigo){
 
         ArrayList <String> productosBuscados = new ArrayList<>();
 
@@ -76,7 +76,7 @@ public class Tienda {
         }
         return productosBuscados;
     }
-    public List <Cliente> clientesQueCompraronEnUnaFecha(){
+    public ArrayList <Cliente> clientesQueCompraronEnUnaFecha(){
 
         ArrayList<Cliente> clientesEspecificos = new ArrayList<>();
 
@@ -88,5 +88,16 @@ public class Tienda {
             }
         }
         return clientesEspecificos;
+    }
+    public List <Factura> facturasCuyoClienteEmpieceConR(String nombre){
+
+        ArrayList<Factura> facturasConLaR = new ArrayList<>();
+
+        for(Factura d: listaFacturas){
+            if(d.clienteConR()){
+                facturasConLaR.add(d);
+            }
+        }
+        return facturasConLaR;
     }
 }
