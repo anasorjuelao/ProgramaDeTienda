@@ -59,7 +59,7 @@ public class Tienda {
     public String cantidadDeUnProductoMayorADiez(ArrayList<Producto>listaProductos, int cantidadDisponible){
         String mensaje="";
         for(Producto a: listaProductos){
-            if(cantidadDisponible == (a.getCantidadDisponible())){
+            if(cantidadDisponible >= 10){
                 return mensaje+= Optional.of(a);
             }
         }
