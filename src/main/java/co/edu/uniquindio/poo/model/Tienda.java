@@ -76,4 +76,17 @@ public class Tienda {
         }
         return productosBuscados;
     }
+    public List <Cliente> clientesQueCompraronEnUnaFecha(){
+
+        ArrayList<Cliente> clientesEspecificos = new ArrayList<>();
+
+        String fechaEspecifica= "7 de octubre de 2026";
+
+        for(Factura c: listaFacturas){
+            if(c.fecha().equals(fechaEspecifica)){
+                clientesEspecificos.add(c.cliente());
+            }
+        }
+        return clientesEspecificos;
+    }
 }
