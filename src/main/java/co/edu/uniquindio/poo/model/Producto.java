@@ -50,4 +50,11 @@ public class Producto {
     public Tienda getOwnedByTienda() {
         return ownedByTienda;
     }
+
+    public boolean esIPhone (){
+        if(nombre.equals("IPhone")){
+            return true;
+        }
+        return false;
+    }
 }

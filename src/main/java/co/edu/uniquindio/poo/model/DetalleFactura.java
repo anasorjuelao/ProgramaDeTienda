@@ -32,4 +32,8 @@ public class DetalleFactura {
     public float calcularSubTotal(){
         return (float) (cantidadComprada * getProducto().getValor());
     }
+    public boolean buscarIPhone(){
+
+        return producto.esIPhone();
+    }
 }

@@ -89,7 +89,7 @@ public class Tienda {
         }
         return clientesEspecificos;
     }
-    public List <Factura> facturasCuyoClienteEmpieceConR(String nombre){
+    public ArrayList <Factura> facturasCuyoClienteEmpieceConR(){
 
         ArrayList<Factura> facturasConLaR = new ArrayList<>();
 
@@ -99,5 +99,16 @@ public class Tienda {
             }
         }
         return facturasConLaR;
+    }
+    public ArrayList <Factura> facturasQueTienenIPhone(){
+
+        ArrayList <Factura> facturasConIPhone = new ArrayList <> ();
+
+        for( Factura e: listaFacturas){
+            if(e.facturasConIPhone()){
+                facturasConIPhone.add(e);
+            }
+        }
+        return facturasConIPhone;
     }
 }

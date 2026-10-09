@@ -53,7 +53,7 @@ public class Cliente {
     public Tienda getOwnedByTienda() {
         return ownedByTienda;
     }
-    public boolean nombreConR(){
+    public boolean buscarNombreConR(){
 
         if(nombreCompleto.startsWith("R")){
             return true;
