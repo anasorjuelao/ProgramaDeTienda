@@ -22,12 +22,15 @@ public record Factura(String codigo, LocalDate fecha, double total,
         return resultado;
     }
     public boolean facturasConIPhone(){
-        boolean resultado= false;
+
         for(DetalleFactura iphone: listaDetallesFactura){
-            if(iphone.buscarIPhone() != resultado){
+            if(iphone.buscarIPhone()){
                 return true;
             }
         }
-        return resultado;
+        return false;
+    }
+    public boolean clienteJuan(){
+         return cliente.esJuan();
     }
 }

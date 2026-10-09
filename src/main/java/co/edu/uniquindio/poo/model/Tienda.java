@@ -111,4 +111,15 @@ public class Tienda {
         }
         return facturasConIPhone;
     }
+    public ArrayList <Factura> facturasDondeJuanTieneIPhone(){
+
+        ArrayList <Factura> facturasJuanTenerIPhoneTuNo = new ArrayList <> ();
+
+        for( Factura f: listaFacturas){
+            if(f.facturasConIPhone() && f.clienteJuan()){
+                facturasJuanTenerIPhoneTuNo.add(f);
+            }
+        }
+        return facturasJuanTenerIPhoneTuNo;
+    }
 }

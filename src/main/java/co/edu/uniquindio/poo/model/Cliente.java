@@ -60,4 +60,11 @@ public class Cliente {
         }
         return false;
     }
+    public boolean esJuan(){
+
+        if(nombreCompleto.equalsIgnoreCase("Juan")){
+            return true;
+        }
+        return false;
+    }
 }
