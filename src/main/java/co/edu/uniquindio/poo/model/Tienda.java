@@ -134,4 +134,15 @@ public class Tienda {
 
         return productosEspecificos;
     }
+    public List <Producto> productosEntreDosPrecios(float precioMinimo, float precioMaximo){
+
+        List <Producto> listaProductosEntrePrecios = new LinkedList<>();
+
+        for(Producto h: listaProductos.values()){
+            if(h.getValor() >= precioMinimo && h.getValor()<=precioMaximo){
+                listaProductosEntrePrecios.add(h);
+            }
+        }
+        return listaProductosEntrePrecios;
+    }
 }
