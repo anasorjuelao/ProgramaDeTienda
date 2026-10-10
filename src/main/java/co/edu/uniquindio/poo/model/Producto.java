@@ -57,4 +57,10 @@ public class Producto {
         }
         return false;
     }
+    public boolean esDeLaCategoria(Categoria categoriaBuscada){
+        if(categoriaBuscada.equals(categoria)){
+            return true;
+        }
+        return false;
+    }
 }

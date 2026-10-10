@@ -122,4 +122,16 @@ public class Tienda {
         }
         return facturasJuanTenerIPhoneTuNo;
     }
+    public ArrayList <Producto> productosDeUnaCategoria(Categoria categoriaBuscada){
+
+        ArrayList <Producto> productosEspecificos = new ArrayList <> ();
+
+        for(Producto g: listaProductos.values()){
+            if(g.esDeLaCategoria(categoriaBuscada)){
+                productosEspecificos.add(g);
+            }
+        }
+
+        return productosEspecificos;
+    }
 }
