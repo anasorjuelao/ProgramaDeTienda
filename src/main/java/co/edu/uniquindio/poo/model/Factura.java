@@ -31,6 +31,7 @@ public record Factura(String codigo, LocalDate fecha, double total,
         return false;
     }
     public boolean clienteJuan(){
-         return cliente.esJuan();
+        return cliente.esJuan();
     }
 }
+

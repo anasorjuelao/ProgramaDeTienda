@@ -1,5 +1,6 @@
 package co.edu.uniquindio.poo.model;
 
+import java.time.LocalDate;
 import java.util.*;
 
 public class Tienda {
@@ -39,7 +40,7 @@ public class Tienda {
 
 
 
-    public String registrarCliente2(Cliente cliente){
+    public String registrarCliente(Cliente cliente){
         Optional<Cliente> clienteEncontrado = buscarCliente(cliente.getDocumentoIdentidad());
         if(clienteEncontrado.isEmpty()){
             listaClientes.add(cliente);
@@ -144,5 +145,27 @@ public class Tienda {
             }
         }
         return listaProductosEntrePrecios;
+    }
+    public ArrayList <Producto> productosOrdenadosDeMayorAMenor(){
+
+        ArrayList <Producto> listaOrganizada = new ArrayList<>();
+        int t=listaProductos.size();
+
+        //Metodo burbuja para ordenar el arreglo
+
+        for(int i=0; i<t-1;i++){
+            for(int j=0; j<t-1-i; j++){
+                //Si el valor de la posicion j (1 por ejemplo) es mayor al valor de la posicion j+1 (2)
+                if(listaOrganizada.get(j).getValor() > listaOrganizada.get(j + 1).getValor()){
+                    Producto guardado= listaOrganizada.get(j);
+                    //Producto de valor menor
+                    listaOrganizada.set(j, listaOrganizada.get(j + 1));
+                    //Producto de valor mayor al producto menor
+                    listaOrganizada.set(j + 1, guardado);
+                }
+            }
+        }
+
+        return listaOrganizada;
     }
 }
