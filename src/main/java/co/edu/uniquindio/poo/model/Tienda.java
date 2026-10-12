@@ -178,8 +178,21 @@ public class Tienda {
                 mayor=listaProductos.get(k);
             }
         }
-        mensaje+=mayor;
-
+        if(mayor!=null) {
+            mensaje += mayor;
+        } else {
+            mensaje+=Optional.empty();
+        }
         return mensaje;
+    }
+    public ArrayList <Cliente> clientesDeUnaCiudad(String ciudadEspecifica){
+        ArrayList <Cliente> listaClientesCiudad = new ArrayList<>();
+
+        for(Cliente l: listaClientes){
+            if(l.getCiudadResidencia().equalsIgnoreCase(ciudadEspecifica)){
+                listaClientesCiudad.add(l);
+            }
+        }
+        return listaClientesCiudad;
     }
 }
