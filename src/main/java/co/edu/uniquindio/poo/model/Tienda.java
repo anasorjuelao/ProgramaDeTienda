@@ -156,10 +156,10 @@ public class Tienda {
         for(int i=0; i<t-1;i++){
             for(int j=0; j<t-1-i; j++){
                 //Si el valor de la posicion j (1 por ejemplo) es mayor al valor de la posicion j+1 (2)
-                if(listaOrganizada.get(j).getValor() > listaOrganizada.get(j + 1).getValor()){
-                    Producto guardado= listaOrganizada.get(j);
+                if(listaProductos.get(j).getValor() > listaProductos.get(j+1).getValor()){
+                    Producto guardado= listaProductos.get(j);
                     //Producto de valor menor
-                    listaOrganizada.set(j, listaOrganizada.get(j + 1));
+                    listaOrganizada.set(j, listaProductos.get(j+1));
                     //Producto de valor mayor al producto menor
                     listaOrganizada.set(j + 1, guardado);
                 }
@@ -167,5 +167,19 @@ public class Tienda {
         }
 
         return listaOrganizada;
+    }
+    public String productoMasCaro(){
+        String mensaje="El producto más caro de esta tienda es: ";
+        int tamaño=listaProductos.size();
+        Producto mayor=null;
+
+        for(int k=0; k<tamaño; k++){
+            if(listaProductos.get(k).getValor() > listaProductos.get(k+1).getValor()){
+                mayor=listaProductos.get(k);
+            }
+        }
+        mensaje+=mayor;
+
+        return mensaje;
     }
 }
